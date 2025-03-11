@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+<body>
+    <article>
+        <div id="">
+            <form action="" id="123">
+                <label for="">Enter UserName/Gmail:</label>
+                <br>
+                <input type="text/gmail" id="name"><br>
+                <label for="">Enter Password:</label>
+                <br>
+                <input type="password" id="password"><br>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+    </article>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+    //import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyCP8JPCu_d9nTFQmXCgWi0RlEiM-p5wpcs",
+      authDomain: "task-management-5d947.firebaseapp.com",
+      projectId: "task-management-5d947",
+      storageBucket: "task-management-5d947.firebasestorage.app",
+      messagingSenderId: "341522273667",
+      appId: "1:341522273667:web:3f0f164819a66510f8d2b6",
+      measurementId: "G-BPMS1PXWQM"
+    };
+    let login=document.getElementById("123");
+    login.addEventListener("submit",function(e){
+        e.preventDefault();
+        let email=document.getElementById("name").value;
+        let password=document.getElementById("password").value;
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            alert("Login Sucessfull")
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage)
+        });
+        // Initialize Firebase
+        //const analytics = getAnalytics(app);
+    })
+  </script>
+</html>
