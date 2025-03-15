@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center; /* Horizontally center */
+      align-items: center; /* Vertically center */
+      height: 100vh;
+      margin: 0;
+    }
+    #main{
+        display: flex;
+        width: 20%;
+        justify-content: space-between;
+    }
+    .hover-button {
+    background-color: #007BFF; /* Initial button color */
+    color: white; /* Initial text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.hover-button:hover {
+    background-color: #0056b3; /* Change to a darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+  </style>
+  <body>
+    <div id="main">
+      <div>
+        <a href="signup.html"><button class="hover-button">Signup</button></a>
+      </div>
+      <div>
+        <a href="login.html"><button class="hover-button">Login</button></a>
+      </div>
+    </div>
+  </body>
+</html>
